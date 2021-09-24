@@ -15,7 +15,7 @@ public class TVController : XRGrabInteractable
     }
     private readonly string code = "Television";
 
-    private readonly Vector3 grabRotation = new Vector3(-40f, 0, 0);
+    private readonly Vector3 grabRotation = new Vector3(-10f, 0, 0);
 
     private bool _gaveGuidance = false;
 
@@ -108,6 +108,7 @@ public class TVController : XRGrabInteractable
     }
     private void SendSignal(XRBaseInteractor interactor)
     {
+        Debug.Log("sending signal");
         Vector3 diff = (television.TVReciverPosition - transform.position).normalized;
         if (Vector3.Dot(diff, transform.forward) > 0.9f)
         {
