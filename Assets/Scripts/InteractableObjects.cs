@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InteractableObjects : MonoBehaviour
 {
-    public int happiness;
+    public int happiness=10;
 
     bool isTouched;
 

@@ -45,10 +45,7 @@ public class ObjectManager : MonoBehaviour
         OpenTV();
     }
 
-    public void TouchObject()
-    {
-        
-    }
+   
    
     public void OpenTV()
     {
