@@ -9,6 +9,7 @@ public class MoveCamera : MonoBehaviour
     private InputDevice controller;
     private float vertical;
     private float horizontal;
+    public float speed = 1;
 
     void Start()
     {
@@ -32,7 +33,7 @@ public class MoveCamera : MonoBehaviour
 
             Transform rigTransform = transform.parent.parent;
             rigTransform.position += (Toolkit.ProjectToXZ(transform.forward.normalized * vertical +
-                transform.right.normalized * horizontal)) * Time.deltaTime;
+                transform.right.normalized * horizontal)) * Time.deltaTime * speed;
         }
     }
 }
