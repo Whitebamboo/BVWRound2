@@ -14,7 +14,7 @@ public class Television : MonoBehaviour
             return _instance;
         }
     }
-    private bool isTurnedOn;
+    public bool isTurnedOn;
 
     private string code = "Television";
 
