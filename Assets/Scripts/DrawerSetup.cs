@@ -18,13 +18,13 @@ public class DrawerSetup : MonoBehaviour
 
     protected void OnEnable()
     {
-        handle.onSelectEnter.AddListener(StoreGrabInfo);
+        //handle.onSelectEntered.AddListener(StoreGrabInfo);
 
     }
 
     protected void OnDisable()
     {
-        handle.onSelectEnter.RemoveListener(StoreGrabInfo);
+        //handle.onSelectEntered.RemoveListener(StoreGrabInfo);
 
 
     }
