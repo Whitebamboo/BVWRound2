@@ -4310,11 +4310,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8ce6dd0eea626774aa1637087f98e4d7, type: 2}
     - target: {fileID: 4730815959115283337, guid: f58463bcd85915c44a2f1e8809589ede, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.04
+      value: -0.046
       objectReference: {fileID: 0}
     - target: {fileID: 4730815959115283337, guid: f58463bcd85915c44a2f1e8809589ede, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.294
+      value: -0.281
       objectReference: {fileID: 0}
     - target: {fileID: 4984386569485338571, guid: f58463bcd85915c44a2f1e8809589ede, type: 3}
       propertyPath: m_Name
@@ -5219,7 +5219,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 13.5028925, y: 0.27964985, z: 2.2619734}
+  m_ConnectedAnchor: {x: 13.351726, y: 0.27964985, z: 2.1598892}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 1
@@ -5314,8 +5314,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.052764148, y: 0.19934957, z: 0.24251992}
-  m_Center: {x: -0.08731054, y: 0.099674754, z: -0.00000022351742}
+  m_Size: {x: 0.03783548, y: 0.043831825, z: 0.10322906}
+  m_Center: {x: -0.0798462, y: 0.09434487, z: 0.012926303}
 --- !u!54 &5327038165679268336
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5588,7 +5588,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 5327038165679268351}
   m_AttachEaseInTime: 0.15
   m_MovementType: 0
   m_VelocityDamping: 1
@@ -5625,6 +5625,11 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!4 &5327038165679268351 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4730815959115283337, guid: f58463bcd85915c44a2f1e8809589ede, type: 3}
+  m_PrefabInstance: {fileID: 5327038165679268312}
+  m_PrefabAsset: {fileID: 0}
 --- !u!136 &5327038165679268368
 CapsuleCollider:
   m_ObjectHideFlags: 0
