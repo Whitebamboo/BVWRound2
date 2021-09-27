@@ -97,7 +97,7 @@ public class AxisDragInteractable : XRBaseInteractable
                     targetPoint = Vector3.MoveTowards(transform.position, m_EndPoint, projected);
                 else
                     targetPoint = Vector3.MoveTowards(transform.position, m_StartPoint, -projected);
-
+                
                 if (Steps > 0)
                 {
                     int posStep = Mathf.RoundToInt((targetPoint - m_StartPoint).magnitude / m_StepLength);
@@ -114,7 +114,7 @@ public class AxisDragInteractable : XRBaseInteractable
                     
                     m_CurrentStep = posStep;
                 }
-
+                
                 OnDragDistance.Invoke((targetPoint - m_StartPoint).magnitude);
 
                 Vector3 move = targetPoint - transform.position;
@@ -147,7 +147,7 @@ public class AxisDragInteractable : XRBaseInteractable
         m_GrabbedOffset = interactor.transform.position - transform.position;
         m_GrabbingInteractor = interactor;
     }
-
+    
     protected override void OnSelectExit(XRBaseInteractor interactor)
     {
         base.OnSelectExit(interactor);
@@ -159,7 +159,7 @@ public class AxisDragInteractable : XRBaseInteractable
             dist = step * m_StepLength;
             
             transform.position = m_StartPoint + transform.TransformDirection(LocalAxis) * dist;
-
+            /*
             if (step != m_CurrentStep)
             {
                 SFXPlayer.Instance.PlaySFX(SnapAudioClip, transform.position, new SFXPlayer.PlayParameters()
@@ -170,9 +170,11 @@ public class AxisDragInteractable : XRBaseInteractable
                 }, 0.0f);
                 OnDragStep.Invoke(step);
             }
+            
         }
     }
     */
+
     void OnDrawGizmosSelected()
     {
         Vector3 end = transform.position + transform.TransformDirection(LocalAxis.normalized) * AxisLength;

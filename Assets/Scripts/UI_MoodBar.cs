@@ -10,7 +10,6 @@ public class UI_MoodBar : MonoBehaviour
 
     public static UI_MoodBar instance { get; private set; }
 
-    public bool hasTask;
     public int fixedNum;
 
     private void Awake()
@@ -27,6 +26,7 @@ public class UI_MoodBar : MonoBehaviour
     /// <param name="fillPercent">填充百分比</param>
     public void SetValue(float fillPercent)
     {
+        Debug.Log(fillPercent);
         mask.rectTransform.SetSizeWithCurrentAnchors(RectTransform.
             Axis.Horizontal, originalSize * fillPercent);
     }
