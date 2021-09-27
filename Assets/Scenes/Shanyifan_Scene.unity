@@ -2656,6 +2656,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1754144572 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2609256515858955774, guid: f58463bcd85915c44a2f1e8809589ede, type: 3}
+  m_PrefabInstance: {fileID: 5327038165679268312}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1754144574
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754144572}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 2.220446e-18, z: 0.01}
+  m_Center: {x: 1.4551915e-11, y: 0, z: 0}
 --- !u!1 &1761959570
 GameObject:
   m_ObjectHideFlags: 0
@@ -3521,15 +3539,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2990694910298294671, guid: f58463bcd85915c44a2f1e8809589ede, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.344
+      value: -0.249
       objectReference: {fileID: 0}
     - target: {fileID: 2990694910298294671, guid: f58463bcd85915c44a2f1e8809589ede, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.404
+      value: 0.108
       objectReference: {fileID: 0}
     - target: {fileID: 2990694910298294671, guid: f58463bcd85915c44a2f1e8809589ede, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.039
+      value: -0.366
       objectReference: {fileID: 0}
     - target: {fileID: 3145353611122245880, guid: f58463bcd85915c44a2f1e8809589ede, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3659,6 +3677,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.776
       objectReference: {fileID: 0}
+    - target: {fileID: 4107779828269238566, guid: f58463bcd85915c44a2f1e8809589ede, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4342067057933392818, guid: f58463bcd85915c44a2f1e8809589ede, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -3766,6 +3788,10 @@ PrefabInstance:
     - target: {fileID: 5649705816330509681, guid: f58463bcd85915c44a2f1e8809589ede, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916326166341444968, guid: f58463bcd85915c44a2f1e8809589ede, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6054336649166830608, guid: f58463bcd85915c44a2f1e8809589ede, type: 3}
       propertyPath: m_LocalScale.x
@@ -4339,44 +4365,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 5327038165679268322}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce78d9f8916433145948a983646fbd0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Renderer: {fileID: 0}
---- !u!114 &5327038165679268325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5327038165679268322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35ffe483d6934704b884767450fd49e5, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 1599762207}
-  m_Colliders:
-  - {fileID: 0}
+  m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
   m_CustomReticle: {fileID: 0}
   m_FirstHoverEntered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5327038165679268324}
-        m_TargetAssemblyTypeName: SelectionOutline, Assembly-CSharp
-        m_MethodName: Highlight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_LastHoverExited:
     m_PersistentCalls:
       m_Calls: []
@@ -4385,49 +4385,13 @@ MonoBehaviour:
       m_Calls: []
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5327038165679268324}
-        m_TargetAssemblyTypeName: SelectionOutline, Assembly-CSharp
-        m_MethodName: RemoveHighlight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5327038165679268324}
-        m_TargetAssemblyTypeName: SelectionOutline, Assembly-CSharp
-        m_MethodName: RemoveHighlight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5327038165679268324}
-        m_TargetAssemblyTypeName: SelectionOutline, Assembly-CSharp
-        m_MethodName: Highlight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_Activated:
     m_PersistentCalls:
       m_Calls: []
@@ -4469,11 +4433,11 @@ MonoBehaviour:
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
-  m_SmoothPosition: 0
+  m_SmoothPosition: 1
   m_SmoothPositionAmount: 5
   m_TightenPosition: 0.5
   m_TrackRotation: 1
-  m_SmoothRotation: 0
+  m_SmoothRotation: 1
   m_SmoothRotationAmount: 5
   m_TightenRotation: 0.5
   m_ThrowOnDetach: 1
