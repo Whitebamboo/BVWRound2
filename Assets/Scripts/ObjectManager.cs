@@ -42,8 +42,8 @@ public class ObjectManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ChangeMood(-1);
-        ChangeClean(-1);
+        ChangeMood(0);
+        ChangeClean(0);
     }
 
    
