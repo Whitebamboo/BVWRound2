@@ -281,7 +281,7 @@ namespace UnityEngine.XR.Interaction.Toolkit
         public GameObject customReticle { get { return m_CustomReticle; } set { m_CustomReticle = value; } }
 
         Dictionary<XRBaseInteractor, GameObject> m_ReticleCache = new Dictionary<XRBaseInteractor, GameObject>();
-
+        internal object selectEntered;
 
         public virtual void AttachCustomReticle(XRBaseInteractor interactor)
         {
