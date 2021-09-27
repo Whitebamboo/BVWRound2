@@ -10,7 +10,7 @@ using Random = UnityEngine.Random;
 public class AxisDragInteractable : XRBaseInteractable
 {
     [Serializable]
-    public class DragDistanceEvent : UnityEvent<float> {} 
+    public class DragDistanceEvent : UnityEvent<float> {}
 
     [Serializable]
     public class DragStepEvent : UnityEvent<int> {}
@@ -73,7 +73,7 @@ public class AxisDragInteractable : XRBaseInteractable
 
         m_CurrentStep = 0;
     }
-
+    /*
     public override void ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase updatePhase)
     {
         if (isSelected)
@@ -139,7 +139,7 @@ public class AxisDragInteractable : XRBaseInteractable
             }
         }
     }
-
+    
     protected override void OnSelectEnter(XRBaseInteractor interactor)
     {
         base.OnSelectEnter(interactor);
@@ -172,7 +172,7 @@ public class AxisDragInteractable : XRBaseInteractable
             }
         }
     }
-
+    */
     void OnDrawGizmosSelected()
     {
         Vector3 end = transform.position + transform.TransformDirection(LocalAxis.normalized) * AxisLength;

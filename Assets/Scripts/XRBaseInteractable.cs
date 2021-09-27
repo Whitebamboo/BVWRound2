@@ -45,7 +45,7 @@ namespace UnityEngine.XR.Interaction.Toolkit
             set
             {
                 m_InteractionManager = value;
-                RegisterWithInteractionMananger();
+            //    RegisterWithInteractionMananger();
             }
         }
 
@@ -129,8 +129,8 @@ namespace UnityEngine.XR.Interaction.Toolkit
             // setup interaction manager
             if (!m_InteractionManager)
                 m_InteractionManager = FindObjectOfType<XRInteractionManager>();
-            if (m_InteractionManager)
-                RegisterWithInteractionMananger();
+          //  if (m_InteractionManager)
+            //    RegisterWithInteractionMananger();
             else
                 Debug.LogWarning("Could not find InteractionManager.", this);
         }
@@ -149,7 +149,7 @@ namespace UnityEngine.XR.Interaction.Toolkit
                 }
             }
         }
-
+        /*
         void RegisterWithInteractionMananger()
         {
             if (m_InteractionManager != m_RegisteredInteractionManager)
@@ -172,7 +172,7 @@ namespace UnityEngine.XR.Interaction.Toolkit
             if (m_RegisteredInteractionManager)
                 m_InteractionManager.UnregisterInteractable(this);
         }
-
+        */
         /// <summary>
         /// Calculates distance squared to interactor (based on colliders).
         /// </summary>
