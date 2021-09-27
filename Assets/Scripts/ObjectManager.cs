@@ -18,11 +18,11 @@ public class ObjectManager : MonoBehaviour
     public GameObject Milk;
     public GameObject Platte;
 
-    public int MoodValue_max=100;
+    public int MoodValue_max=10;
     public int MoodValue_current;
 
 
-    public int CleanValue_max=100;
+    public int CleanValue_max=10;
     public int CleanValue_current;
 
     static ObjectManager s_Instance;
@@ -42,7 +42,8 @@ public class ObjectManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        OpenTV();
+        ChangeMood(-1);
+        ChangeClean(-1);
     }
 
    
