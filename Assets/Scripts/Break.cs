@@ -8,6 +8,9 @@ public class Break : MonoBehaviour
 
 	void OnCollisionEnter(Collision collision)
 	{
+
+		Debug.Log(collision.relativeVelocity.magnitude);
+		Debug.Log(magnitudeCol);
 		if (collision.relativeVelocity.magnitude > magnitudeCol)
 		{
 			Destroy(gameObject);

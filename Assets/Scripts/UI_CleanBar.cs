@@ -8,14 +8,18 @@ public class UI_CleanBar : MonoBehaviour
     public Image mask;
     private float originalSize;
 
-    public static UI_CleanBar instance { get; private set; }
+    static UI_CleanBar s_Instance;
+    public static UI_CleanBar Instance => s_Instance;
 
-    public bool hasTask;
-    public int fixedNum;
-
-    private void Awake()
+    void Awake()
     {
-        instance = this;
+        if (s_Instance != null)
+        {
+            Destroy(this);
+            return;
+        }
+
+        s_Instance = this;
     }
 
     void Start()
@@ -29,5 +33,10 @@ public class UI_CleanBar : MonoBehaviour
     {
         mask.rectTransform.SetSizeWithCurrentAnchors(RectTransform.
             Axis.Horizontal, originalSize * fillPercent);
+    }
+
+    public void SetActive(bool active)
+    {
+        gameObject.SetActive(active);
     }
 }
