@@ -18,12 +18,11 @@ public class ObjectManager : MonoBehaviour
     public GameObject Milk;
     public GameObject Platte;
 
-    public int MoodValue_max=10;
-    public int MoodValue_current;
-
-
-    public int CleanValue_max=10;
-    public int CleanValue_current;
+    public int MoodValue_max = 10;
+    int currentMoodValue;
+   
+    public int CleanValue_max = 10;
+    int currentCleanValue;
 
     static ObjectManager s_Instance;
     public static ObjectManager Instance => s_Instance;
@@ -39,18 +38,17 @@ public class ObjectManager : MonoBehaviour
         s_Instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        ChangeMood(-1);
-        ChangeClean(-1);
+        currentMoodValue = 0;
+        currentCleanValue = 0;
+        UI_MoodBar.instance.SetValue(currentMoodValue / (float)MoodValue_max);
+        UI_CleanBar.instance.SetValue(currentCleanValue / (float)CleanValue_max);
     }
 
-   
-   
     public void OpenTV()
     {
-       if(TV.gameObject.GetComponent<Television>().isTurnedOn == true)
+        if (TV.gameObject.GetComponent<Television>().isTurnedOn == true)
         {
             ChangeMood(1);
         }
@@ -58,18 +56,14 @@ public class ObjectManager : MonoBehaviour
 
     public void ChangeMood(int amount)
     {
-
-        MoodValue_current = Mathf.Clamp(MoodValue_current + amount, 0, MoodValue_max);
-        UI_MoodBar.instance.SetValue(MoodValue_current / (float)MoodValue_max);
+        currentMoodValue = Mathf.Clamp(currentMoodValue + amount, 0, MoodValue_max);
+        UI_MoodBar.instance.SetValue(currentMoodValue / (float)MoodValue_max);
     }
-
-
 
     public void ChangeClean(int amount)
     {
-
-        CleanValue_current = Mathf.Clamp(CleanValue_current + amount, 0, CleanValue_max);
-        UI_CleanBar.instance.SetValue(CleanValue_current / (float)CleanValue_max);
+        currentCleanValue = Mathf.Clamp(currentCleanValue + amount, 0, CleanValue_max);
+        UI_CleanBar.instance.SetValue(currentCleanValue / (float)CleanValue_max);
     }
 
 }

@@ -4310,11 +4310,19 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8ce6dd0eea626774aa1637087f98e4d7, type: 2}
     - target: {fileID: 4730815959115283337, guid: f58463bcd85915c44a2f1e8809589ede, type: 3}
       propertyPath: m_LocalPosition.x
+<<<<<<< HEAD
+      value: -0.0198
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730815959115283337, guid: f58463bcd85915c44a2f1e8809589ede, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.2677
+=======
       value: -0.046
       objectReference: {fileID: 0}
     - target: {fileID: 4730815959115283337, guid: f58463bcd85915c44a2f1e8809589ede, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.281
+>>>>>>> d8edbea35cabff34fe7c18a33275a76c7af65cee
       objectReference: {fileID: 0}
     - target: {fileID: 4984386569485338571, guid: f58463bcd85915c44a2f1e8809589ede, type: 3}
       propertyPath: m_Name
@@ -5219,7 +5227,15 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
+<<<<<<< HEAD
   m_ConnectedAnchor: {x: 13.303725, y: 0.27964985, z: 2.2638893}
+=======
+<<<<<<< HEAD
+  m_ConnectedAnchor: {x: 13.513326, y: 0.27964985, z: 2.3702898}
+=======
+  m_ConnectedAnchor: {x: 13.351726, y: 0.27964985, z: 2.1598892}
+>>>>>>> d8edbea35cabff34fe7c18a33275a76c7af65cee
+>>>>>>> 3c5a9eaad1ead3fb41918f20e14912d89f6bdb46
   serializedVersion: 2
   m_SecondaryAxis: {x: 1, y: 0, z: 0}
   m_XMotion: 0
@@ -5232,7 +5248,7 @@ ConfigurableJoint:
     spring: 0
     damper: 0
   m_LinearLimit:
-    limit: 0.4
+    limit: 0.3
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
@@ -5314,8 +5330,13 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
+<<<<<<< HEAD
+  m_Size: {x: 0.04945898, y: 0.105650306, z: 0.21972449}
+  m_Center: {x: -0.085657954, y: 0.14628285, z: 0.011397488}
+=======
   m_Size: {x: 0.03783548, y: 0.043831825, z: 0.10322906}
   m_Center: {x: -0.0798462, y: 0.09434487, z: 0.012926303}
+>>>>>>> d8edbea35cabff34fe7c18a33275a76c7af65cee
 --- !u!54 &5327038165679268336
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5515,7 +5536,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -614080976845394133, guid: 1d784c8f617acc144bcbd2f54782783e, type: 3}
 --- !u!114 &5327038165679268344

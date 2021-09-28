@@ -26,7 +26,6 @@ public class UI_MoodBar : MonoBehaviour
     /// <param name="fillPercent">填充百分比</param>
     public void SetValue(float fillPercent)
     {
-        Debug.Log(fillPercent);
         mask.rectTransform.SetSizeWithCurrentAnchors(RectTransform.
             Axis.Horizontal, originalSize * fillPercent);
     }
