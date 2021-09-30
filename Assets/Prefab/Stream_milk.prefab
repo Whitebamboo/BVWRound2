@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3060270501903172747}
   - component: {fileID: 3060270501903172746}
   m_Layer: 0
-  m_Name: Stream 1
+  m_Name: Stream_milk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5506d85bc87b011419fec45f4f16229a, type: 2}
+  - {fileID: 2100000, guid: 11c5d60bd6342bf4393e815f88f1168e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4922,7 +4922,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c693f720f63530543a3291c56b19170e, type: 2}
+  - {fileID: 2100000, guid: 51789191464a723458251ac167300f0a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
