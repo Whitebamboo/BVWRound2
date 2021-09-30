@@ -8,9 +8,11 @@ public class MusicManager : MonoBehaviour
     public static MusicManager Instance => s_Instance;
 
     public AudioSource BgmAudioSource;
+    public AudioSource sfxAudioSource;
     public AudioClip happinessStateClip;
     public AudioClip cleaningStateStartClip;
     public AudioClip cleaningStateClip;
+    public AudioClip brake;
 
     void Awake()
     {
@@ -41,10 +43,11 @@ public class MusicManager : MonoBehaviour
         BgmAudioSource.volume = 0.25f;
         BgmAudioSource.clip = cleaningStateClip;
         BgmAudioSource.Play();
+        UI_CleanBar.Instance.SetActive(true);
     }
 
-    public void PlayCleaningStateStartClip()
+    public void PlayBrake()
     {
-
+        sfxAudioSource.PlayOneShot(brake);
     }
 }

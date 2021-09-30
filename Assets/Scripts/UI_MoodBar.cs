@@ -5,28 +5,25 @@ using UnityEngine.UI;
 
 public class UI_MoodBar : MonoBehaviour
 {
-    public Image mask;
-    private float originalSize;
+    public Slider bar;
 
-    public static UI_MoodBar instance { get; private set; }
+    static UI_MoodBar s_Instance;
+    public static UI_MoodBar Instance => s_Instance;
 
-    public int fixedNum;
-
-    private void Awake()
+    void Awake()
     {
-        instance = this;
+        if (s_Instance != null)
+        {
+            Destroy(this);
+            return;
+        }
+
+        s_Instance = this;
     }
 
-    void Start()
-    {
-        originalSize = mask.rectTransform.rect.width;
-    }
 
-
-    /// <param name="fillPercent">填充百分比</param>
     public void SetValue(float fillPercent)
     {
-        mask.rectTransform.SetSizeWithCurrentAnchors(RectTransform.
-            Axis.Horizontal, originalSize * fillPercent);
+        bar.value = fillPercent;
     }
 }

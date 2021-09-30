@@ -23,6 +23,8 @@ public class MoveCamera : MonoBehaviour
         {
             controller = devices[0];
         }
+
+        transform.localPosition = Vector3.zero;
     }
     private void Update()
     {

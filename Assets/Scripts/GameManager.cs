@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public enum GameState
 {
+    BeginningState,
     HappinessState,
     CleaningState,
     EndingState
@@ -23,6 +24,12 @@ public class GameManager : MonoBehaviour
     float m_currentStateTime;
     public float CurrentStateTime => m_currentStateTime;
 
+    public int MoodValue_max = 10;
+    int currentMoodValue;
+
+    public int CleanValue_max = 10;
+    int currentCleanValue;
+
     void Awake()
     {
         if (s_Instance != null)
@@ -36,7 +43,13 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        state = GameState.HappinessState;
+        currentMoodValue = 0;
+        currentCleanValue = 5;
+        UI_MoodBar.Instance.SetValue(currentMoodValue / (float)MoodValue_max);
+        UI_CleanBar.Instance.SetValue(currentCleanValue / (float)CleanValue_max);
+        UI_CleanBar.Instance.SetActive(false);
+
+        state = GameState.BeginningState;
 
         m_currentStateTime = happinessStateTime;
         ProcessHappinessState();
@@ -45,6 +58,12 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         m_currentStateTime -= Time.deltaTime;
+
+        if(currentMoodValue == 5 && state == GameState.BeginningState)
+        {
+            m_currentStateTime = happinessStateTime;
+            state = GameState.HappinessState;
+        }
 
         if(m_currentStateTime < 0 && state == GameState.HappinessState)
         {
@@ -75,5 +94,22 @@ public class GameManager : MonoBehaviour
     void ProcessEndingState()
     {
         SceneManager.LoadScene("EndScene");
+    }
+
+    public void ChangeMood(int amount)
+    {
+        currentMoodValue = Mathf.Clamp(currentMoodValue + amount, 0, MoodValue_max);
+        UI_MoodBar.Instance.SetValue(currentMoodValue / (float)MoodValue_max);
+
+        if(state == GameState.BeginningState || state == GameState.HappinessState)
+        {
+            MusicManager.Instance.PlayBrake();
+        }
+    }
+
+    public void ChangeClean(int amount)
+    {
+        currentCleanValue = Mathf.Clamp(currentCleanValue + amount, 0, CleanValue_max);
+        UI_CleanBar.Instance.SetValue(currentCleanValue / (float)CleanValue_max);
     }
 }
