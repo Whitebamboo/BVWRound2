@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class HideArea : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject m_hintArea;
+
+    private void Start()
     {
-        
+        GameManager.Instance.AddHideAreas(this);
+        m_hintArea.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ShowHint()
     {
-        
+        m_hintArea.SetActive(true);
+    }
+
+    public void DisableHint()
+    {
+        m_hintArea.SetActive(false);
     }
 }

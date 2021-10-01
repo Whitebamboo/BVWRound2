@@ -18,8 +18,6 @@ public class ToMainScene : MonoBehaviour
         if (isPlayerStarted == true && VideoPlayer.isPlaying == false)
         {
             SceneManager.LoadScene("Main");
-        }
-        
-      
+        }     
     }
 }

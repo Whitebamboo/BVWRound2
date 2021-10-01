@@ -3,9 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
+public enum CleaningType
+{
+    None,
+    Hide
+}
+
 public class InteractableObjects : MonoBehaviour
 {
-    public int happiness = 1;
+    public int happinessPoints = 1;
+
+    public CleaningType cleaningType;
 
     bool isTouched;
 
@@ -13,6 +21,7 @@ public class InteractableObjects : MonoBehaviour
 
     private void Start()
     {
+        GetComponent<XRGrabInteractable>().selectEntered.AddListener(OnSelectEnter);
         GetComponent<XRGrabInteractable>().selectExited.AddListener(OnSelectExit);
         isStayInHideArea = false;
     }
@@ -46,6 +55,19 @@ public class InteractableObjects : MonoBehaviour
 
         isTouched = true;
 
-        GameManager.Instance.ChangeMood(happiness);
+        GameManager.Instance.ChangeMood(happinessPoints);
+
+        if (cleaningType == CleaningType.Hide && GameManager.Instance.state == GameState.CleaningState)
+        {
+            GameManager.Instance.disableHideAreaHint();
+        }
+    }
+
+    public void OnSelectEnter(SelectEnterEventArgs interactor)
+    {
+        if(cleaningType == CleaningType.Hide && GameManager.Instance.state == GameState.CleaningState)
+        {
+            GameManager.Instance.ShowHideAreaHint();
+        } 
     }
 }

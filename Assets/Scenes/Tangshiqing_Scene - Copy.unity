@@ -1661,9 +1661,7 @@ MonoBehaviour:
   Milk: {fileID: 1487564649}
   Platte: {fileID: 1989729644}
   MoodValue_max: 100
-  MoodValue_current: 0
   CleanValue_max: 100
-  CleanValue_current: 0
 --- !u!4 &1291871716
 Transform:
   m_ObjectHideFlags: 0
@@ -2773,7 +2771,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8946d8de6bcc77740b8f3710abbfaed0, type: 2}
+  - {fileID: 2100000, guid: 3a590e390db4df149885e0b5a3278600, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6047,7 +6045,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1696370753931987278}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.114465564, z: 0}
+  m_LocalPosition: {x: -0, y: 0.114465564, z: 0}
   m_LocalScale: {x: 2.5252674, y: 6.44587, z: 2.5252674}
   m_Children: []
   m_Father: {fileID: 2580067436774382254}

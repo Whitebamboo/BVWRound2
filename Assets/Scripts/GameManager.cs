@@ -30,6 +30,46 @@ public class GameManager : MonoBehaviour
     public int CleanValue_max = 10;
     int currentCleanValue;
 
+    List<HideArea> hideAreas = new List<HideArea>();
+
+    public void AddHideAreas(HideArea area)
+    {
+        hideAreas.Add(area);
+    }
+
+    public void ShowHideAreaHint()
+    {
+        foreach(HideArea area in hideAreas)
+        {
+            area.ShowHint();
+        }
+    }
+
+    public void disableHideAreaHint()
+    {
+        foreach (HideArea area in hideAreas)
+        {
+            area.DisableHint();
+        }
+    }
+
+    public void ChangeMood(int amount)
+    {
+        currentMoodValue = Mathf.Clamp(currentMoodValue + amount, 0, MoodValue_max);
+        UI_MoodBar.Instance.SetValue(currentMoodValue / (float)MoodValue_max);
+
+        if (state == GameState.BeginningState || state == GameState.HappinessState)
+        {
+            MusicManager.Instance.PlayBrake();
+        }
+    }
+
+    public void ChangeClean(int amount)
+    {
+        currentCleanValue = Mathf.Clamp(currentCleanValue + amount, 0, CleanValue_max);
+        UI_CleanBar.Instance.SetValue(currentCleanValue / (float)CleanValue_max);
+    }
+
     void Awake()
     {
         if (s_Instance != null)
@@ -94,22 +134,5 @@ public class GameManager : MonoBehaviour
     void ProcessEndingState()
     {
         SceneManager.LoadScene("EndScene");
-    }
-
-    public void ChangeMood(int amount)
-    {
-        currentMoodValue = Mathf.Clamp(currentMoodValue + amount, 0, MoodValue_max);
-        UI_MoodBar.Instance.SetValue(currentMoodValue / (float)MoodValue_max);
-
-        if(state == GameState.BeginningState || state == GameState.HappinessState)
-        {
-            MusicManager.Instance.PlayBrake();
-        }
-    }
-
-    public void ChangeClean(int amount)
-    {
-        currentCleanValue = Mathf.Clamp(currentCleanValue + amount, 0, CleanValue_max);
-        UI_CleanBar.Instance.SetValue(currentCleanValue / (float)CleanValue_max);
     }
 }
