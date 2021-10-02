@@ -50,4 +50,9 @@ public class MusicManager : MonoBehaviour
     {
         sfxAudioSource.PlayOneShot(brake);
     }
+
+    public void PlayClip(AudioClip clip)
+    {
+        sfxAudioSource.PlayOneShot(clip);
+    }
 }

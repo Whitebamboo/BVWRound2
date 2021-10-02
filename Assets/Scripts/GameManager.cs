@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     float m_currentStateTime;
     public float CurrentStateTime => m_currentStateTime;
 
+    public int HappinessValueForNextStage = 5;
+
     public int MoodValue_max = 10;
     int currentMoodValue;
 
@@ -84,7 +86,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         currentMoodValue = 0;
-        currentCleanValue = 5;
+        currentCleanValue = 2;
         UI_MoodBar.Instance.SetValue(currentMoodValue / (float)MoodValue_max);
         UI_CleanBar.Instance.SetValue(currentCleanValue / (float)CleanValue_max);
         UI_CleanBar.Instance.SetActive(false);
@@ -99,7 +101,7 @@ public class GameManager : MonoBehaviour
     {
         m_currentStateTime -= Time.deltaTime;
 
-        if(currentMoodValue == 5 && state == GameState.BeginningState)
+        if(currentMoodValue == HappinessValueForNextStage && state == GameState.BeginningState)
         {
             m_currentStateTime = happinessStateTime;
             state = GameState.HappinessState;
