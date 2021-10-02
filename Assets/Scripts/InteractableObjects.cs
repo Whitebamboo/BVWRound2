@@ -48,7 +48,12 @@ public class InteractableObjects : MonoBehaviour
 
     public void OnSelectExit(SelectExitEventArgs interactor)
     {
-        if(isTouched)
+        if (cleaningType == CleaningType.Hide && GameManager.Instance.state == GameState.CleaningState)
+        {
+            GameManager.Instance.disableHideAreaHint();
+        }
+
+        if (isTouched)
         {
             return;
         }
@@ -56,11 +61,6 @@ public class InteractableObjects : MonoBehaviour
         isTouched = true;
 
         GameManager.Instance.ChangeMood(happinessPoints);
-
-        if (cleaningType == CleaningType.Hide && GameManager.Instance.state == GameState.CleaningState)
-        {
-            GameManager.Instance.disableHideAreaHint();
-        }
     }
 
     public void OnSelectEnter(SelectEnterEventArgs interactor)

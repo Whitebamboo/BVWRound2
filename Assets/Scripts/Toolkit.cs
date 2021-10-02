@@ -7,6 +7,6 @@ public class Toolkit
 
     public static Vector3 ProjectToXZ(Vector3 vector)
     {
-        return new Vector3(vector.x, 0f, vector.z);
+        return new Vector3(vector.x, 0, vector.z);
     }
 }
