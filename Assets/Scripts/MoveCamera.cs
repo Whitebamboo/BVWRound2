@@ -35,15 +35,19 @@ public class MoveCamera : MonoBehaviour
             horizontal = thumbStickValue.x;
             Transform rigTransform = transform.parent.parent;
          //   Debug.Log("this"+this.GetComponent<Transform>().position);
-            if (isInTheHouse())
+
+            Vector3 nextPosition = rigTransform.position + (Toolkit.ProjectToXZ(transform.forward.normalized * vertical +
+                    transform.right.normalized * horizontal)) * Time.deltaTime * speed;
+
+            if (isInTheHouse(nextPosition))
             { 
                 rigTransform.position += (Toolkit.ProjectToXZ(transform.forward.normalized * vertical +
                     transform.right.normalized * horizontal)) * Time.deltaTime * speed;
             }
             else
             {
-                rigTransform.position += (Toolkit.ProjectToXZ(transform.forward.normalized * vertical +
-                    transform.right.normalized * horizontal)) * Time.deltaTime * outspeed;
+                //rigTransform.position += (Toolkit.ProjectToXZ(transform.forward.normalized * vertical +
+                //    transform.right.normalized * horizontal)) * Time.deltaTime * outspeed;
             }
         }
         
@@ -51,14 +55,14 @@ public class MoveCamera : MonoBehaviour
 
   
 
-    public bool isInTheHouse()
+    public bool isInTheHouse(Vector3 position)
     {
-        Vector3 currentPositon = this.GetComponent<Transform>().position;
+        //Vector3 currentPositon = this.GetComponent<Transform>().position;
 
-        if(currentPositon.x <10 && currentPositon.x >-11 &&
-           currentPositon.z < 3 && currentPositon.z > -10)
+        if(position.x <10 && position.x >-11 &&
+           position.z < 3 && position.z > -10)
         {
-            Debug.Log("cur"+currentPositon);
+            //Debug.Log("cur"+currentPositon);
             return true;
         }
         else
