@@ -10,6 +10,7 @@ public class MoveCamera : MonoBehaviour
     private float vertical;
     private float horizontal;
     public float speed = 1;
+    public float outspeed = 0.01f;
 
     void Start()
     {
@@ -32,10 +33,39 @@ public class MoveCamera : MonoBehaviour
         {
             vertical = thumbStickValue.y;
             horizontal = thumbStickValue.x;
-
             Transform rigTransform = transform.parent.parent;
-            rigTransform.position += (Toolkit.ProjectToXZ(transform.forward.normalized * vertical +
-                transform.right.normalized * horizontal)) * Time.deltaTime * speed;
+         //   Debug.Log("this"+this.GetComponent<Transform>().position);
+            if (isInTheHouse())
+            { 
+                rigTransform.position += (Toolkit.ProjectToXZ(transform.forward.normalized * vertical +
+                    transform.right.normalized * horizontal)) * Time.deltaTime * speed;
+            }
+            else
+            {
+                rigTransform.position += (Toolkit.ProjectToXZ(transform.forward.normalized * vertical +
+                    transform.right.normalized * horizontal)) * Time.deltaTime * outspeed;
+            }
+        }
+        
+    }
+
+  
+
+    public bool isInTheHouse()
+    {
+        Vector3 currentPositon = this.GetComponent<Transform>().position;
+
+        if(currentPositon.x <10 && currentPositon.x >-11 &&
+           currentPositon.z < 3 && currentPositon.z > -10)
+        {
+            Debug.Log("cur"+currentPositon);
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
+
+
 }
