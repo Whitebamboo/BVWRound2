@@ -3344,6 +3344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a109be839602e784794694c6bc5901ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
   happinessStateTime: 10
   cleaningStateTime: 100
   state: 0
@@ -4901,6 +4902,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df9da49b1e862594bb46019a291d4b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xRange: {x: 0, y: 0}
+  raiseAmount: 0
 --- !u!65 &2012470006
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16234,13 +16237,13 @@ ConfigurableJoint:
   m_GameObject: {fileID: 6109974525217303397}
   m_ConnectedBody: {fileID: 0}
   m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 0.1993496, z: 0}
+  m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 9.4976015, y: 1.1261365, z: -3.2918637}
+  m_ConnectedAnchor: {x: 9.487966, y: 0.12943514, z: -3.2918637}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
-  m_XMotion: 2
+  m_XMotion: 1
   m_YMotion: 0
   m_ZMotion: 0
   m_AngularXMotion: 0
@@ -16250,7 +16253,7 @@ ConfigurableJoint:
     spring: 0
     damper: 0
   m_LinearLimit:
-    limit: 0
+    limit: 0.6
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
@@ -16280,7 +16283,7 @@ ConfigurableJoint:
   m_XDrive:
     serializedVersion: 3
     positionSpring: 0
-    positionDamper: 2
+    positionDamper: 0
     maximumForce: 3.4028233e+38
   m_YDrive:
     serializedVersion: 3
