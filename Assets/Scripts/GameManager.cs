@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     static GameManager s_Instance;
     public static GameManager Instance => s_Instance;
 
+    public GameObject Player;
+
     public float happinessStateTime;
     public float cleaningStateTime;
 
