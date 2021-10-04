@@ -11,6 +11,8 @@ public enum CleaningType
 
 public class InteractableObjects : MonoBehaviour
 {
+    public GameObject OutlineObject;
+
     public int happinessPoints = 1;
 
     public CleaningType cleaningType;
@@ -25,6 +27,8 @@ public class InteractableObjects : MonoBehaviour
     {
         GetComponent<XRGrabInteractable>().selectEntered.AddListener(OnSelectEnter);
         GetComponent<XRGrabInteractable>().selectExited.AddListener(OnSelectExit);
+        GetComponent<XRGrabInteractable>().firstHoverEntered.AddListener(OnHoverEnter);
+        GetComponent<XRGrabInteractable>().lastHoverExited.AddListener(OnHoverExit);
         isStayInHideArea = false;
 
         if(cleaningType == CleaningType.HideAndReturn)
@@ -32,6 +36,33 @@ public class InteractableObjects : MonoBehaviour
             Debug.Log(gameObject.name);
             GameManager.Instance.InitCleanValue();
         }
+
+        if (OutlineObject == null)
+        {
+            Debug.LogError("Object missing OutlineObject");
+            return;
+        }
+        OutlineObject.SetActive(false);
+    }
+
+    void OnHoverEnter(HoverEnterEventArgs args)
+    {
+        if(OutlineObject == null)
+        {
+            Debug.LogError("Object missing OutlineObject");
+            return;
+        }
+        OutlineObject.SetActive(true);
+    }
+
+    void OnHoverExit(HoverExitEventArgs args)
+    {
+        if (OutlineObject == null)
+        {
+            Debug.LogError("Object missing OutlineObject");
+            return;
+        }
+        OutlineObject.SetActive(false);
     }
 
     public void OnTriggerStay(Collider other)
@@ -74,6 +105,11 @@ public class InteractableObjects : MonoBehaviour
 
     public void OnSelectEnter(SelectEnterEventArgs interactor)
     {
+        if (OutlineObject != null)
+        {
+            OutlineObject.SetActive(false);
+        }
+
         if(onSelectClip != null)
         {
             MusicManager.Instance.PlayClip(onSelectClip);
