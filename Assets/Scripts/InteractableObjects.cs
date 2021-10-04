@@ -39,7 +39,7 @@ public class InteractableObjects : MonoBehaviour
 
         if (OutlineObject == null)
         {
-            Debug.LogError("Object missing OutlineObject");
+            Debug.Log("Object missing OutlineObject");
             return;
         }
         OutlineObject.SetActive(false);
@@ -49,7 +49,7 @@ public class InteractableObjects : MonoBehaviour
     {
         if(OutlineObject == null)
         {
-            Debug.LogError("Object missing OutlineObject");
+            Debug.Log("Object missing OutlineObject");
             return;
         }
         OutlineObject.SetActive(true);
@@ -59,7 +59,7 @@ public class InteractableObjects : MonoBehaviour
     {
         if (OutlineObject == null)
         {
-            Debug.LogError("Object missing OutlineObject");
+            Debug.Log("Object missing OutlineObject");
             return;
         }
         OutlineObject.SetActive(false);
