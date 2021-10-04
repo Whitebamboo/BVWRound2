@@ -30,7 +30,7 @@ public class InteractableObjects : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {  
-        if(isTouched && other.GetComponent<HideArea>() != null && !isStayInHideArea)
+        if(isTouched && other.GetComponent<HideArea>() != null && !isStayInHideArea && GameManager.Instance.state == GameState.CleaningState)
         {
             isStayInHideArea = true;
 
@@ -41,7 +41,7 @@ public class InteractableObjects : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
-        if (isTouched && other.GetComponent<HideArea>() != null && isStayInHideArea)
+        if (isTouched && other.GetComponent<HideArea>() != null && isStayInHideArea && GameManager.Instance.state == GameState.CleaningState)
         {
             isStayInHideArea = false;
 
