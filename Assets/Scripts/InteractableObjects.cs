@@ -6,7 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public enum CleaningType
 {
     None,
-    Hide
+    HideAndReturn
 }
 
 public class InteractableObjects : MonoBehaviour
@@ -26,6 +26,12 @@ public class InteractableObjects : MonoBehaviour
         GetComponent<XRGrabInteractable>().selectEntered.AddListener(OnSelectEnter);
         GetComponent<XRGrabInteractable>().selectExited.AddListener(OnSelectExit);
         isStayInHideArea = false;
+
+        if(cleaningType == CleaningType.HideAndReturn)
+        {
+            Debug.Log(gameObject.name);
+            GameManager.Instance.InitCleanValue();
+        }
     }
 
     public void OnTriggerStay(Collider other)
@@ -51,9 +57,9 @@ public class InteractableObjects : MonoBehaviour
 
     public void OnSelectExit(SelectExitEventArgs interactor)
     {
-        if (cleaningType == CleaningType.Hide && GameManager.Instance.state == GameState.CleaningState)
+        if (cleaningType == CleaningType.HideAndReturn && GameManager.Instance.state == GameState.CleaningState)
         {
-            GameManager.Instance.disableHideAreaHint();
+            GameManager.Instance.DisableHideAreaHint();
         }
 
         if (isTouched)
@@ -73,7 +79,7 @@ public class InteractableObjects : MonoBehaviour
             MusicManager.Instance.PlayClip(onSelectClip);
         }
 
-        if(cleaningType == CleaningType.Hide && GameManager.Instance.state == GameState.CleaningState)
+        if(cleaningType == CleaningType.HideAndReturn && GameManager.Instance.state == GameState.CleaningState)
         {
             GameManager.Instance.ShowHideAreaHint();
         } 

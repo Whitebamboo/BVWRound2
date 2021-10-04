@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject Player;
 
+    public float happinessStateTotalTime;
     public float happinessStateTime;
     public float cleaningStateTime;
 
@@ -31,10 +32,15 @@ public class GameManager : MonoBehaviour
     public int MoodValue_max = 10;
     int currentMoodValue;
 
-    public int CleanValue_max = 10;
+    public int CleanValue_max = 12;
     int currentCleanValue;
 
     List<HideArea> hideAreas = new List<HideArea>();
+
+    public void InitCleanValue()
+    {
+        currentCleanValue = Mathf.Clamp(currentCleanValue + 1, 0, CleanValue_max);
+    }
 
     public void AddHideAreas(HideArea area)
     {
@@ -43,13 +49,13 @@ public class GameManager : MonoBehaviour
 
     public void ShowHideAreaHint()
     {
-        foreach(HideArea area in hideAreas)
-        {
-            area.ShowHint();
-        }
+        //foreach(HideArea area in hideAreas)
+        //{
+        //    area.ShowHint();
+        //}
     }
 
-    public void disableHideAreaHint()
+    public void DisableHideAreaHint()
     {
         foreach (HideArea area in hideAreas)
         {
@@ -88,14 +94,13 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         currentMoodValue = 0;
-        currentCleanValue = 2;
         UI_MoodBar.Instance.SetValue(currentMoodValue / (float)MoodValue_max);
-        UI_CleanBar.Instance.SetValue(currentCleanValue / (float)CleanValue_max);
+
         UI_CleanBar.Instance.SetActive(false);
 
         state = GameState.BeginningState;
 
-        m_currentStateTime = happinessStateTime;
+        m_currentStateTime = happinessStateTotalTime;
         ProcessHappinessState();
     }
 
@@ -103,13 +108,24 @@ public class GameManager : MonoBehaviour
     {
         m_currentStateTime -= Time.deltaTime;
 
+        //happiness stage with reached Goal
         if(currentMoodValue == HappinessValueForNextStage && state == GameState.BeginningState)
         {
             m_currentStateTime = happinessStateTime;
             state = GameState.HappinessState;
         }
 
-        if(m_currentStateTime < 0 && state == GameState.HappinessState)
+        //happiness stage with un-reached Goal
+        if (m_currentStateTime < 0 && state == GameState.BeginningState)
+        {
+            m_currentStateTime = cleaningStateTime;
+
+            state = GameState.CleaningState;
+            ProcessCleaningState();
+        }
+
+        //buffer time for reach the hapiness goal
+        if (m_currentStateTime < 0 && state == GameState.HappinessState)
         {
             m_currentStateTime = cleaningStateTime;
 
@@ -117,6 +133,7 @@ public class GameManager : MonoBehaviour
             ProcessCleaningState();          
         }
 
+        //cleaning stage time
         if(m_currentStateTime < 0 && state == GameState.CleaningState)
         {
             state = GameState.EndingState;
@@ -133,6 +150,7 @@ public class GameManager : MonoBehaviour
 
     void ProcessCleaningState()
     {
+        UI_CleanBar.Instance.SetValue(currentCleanValue / (float)CleanValue_max);
         StartCoroutine(MusicManager.Instance.PlayCleaningStateClip());      
     }
 
