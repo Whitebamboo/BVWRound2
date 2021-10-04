@@ -431,6 +431,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 72032306}
   m_Mesh: {fileID: -5076798556035486163, guid: 7f181baa1df54dc4c8c40e798af4f018, type: 3}
+--- !u!1 &85501369
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 85501370}
+  m_Layer: 0
+  m_Name: origin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &85501370
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85501369}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.00687, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1320541114}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &92734481
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,6 +509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0d4cccc12efec40b47dd351c2451a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutlineObject: {fileID: 0}
   happinessPoints: 1
   cleaningType: 1
   onSelectClip: {fileID: 8300000, guid: ab94ad8b4428c9644b9ae3cdab38935b, type: 3}
@@ -1528,6 +1559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0d4cccc12efec40b47dd351c2451a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutlineObject: {fileID: 0}
   happinessPoints: 1
   cleaningType: 1
   onSelectClip: {fileID: 8300000, guid: ab94ad8b4428c9644b9ae3cdab38935b, type: 3}
@@ -2999,6 +3031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0d4cccc12efec40b47dd351c2451a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutlineObject: {fileID: 0}
   happinessPoints: 1
   cleaningType: 1
   onSelectClip: {fileID: 8300000, guid: ab94ad8b4428c9644b9ae3cdab38935b, type: 3}
@@ -5103,6 +5136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0d4cccc12efec40b47dd351c2451a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutlineObject: {fileID: 0}
   happinessPoints: 1
   cleaningType: 1
   onSelectClip: {fileID: 8300000, guid: ab94ad8b4428c9644b9ae3cdab38935b, type: 3}
@@ -5552,6 +5586,7 @@ Transform:
   m_LocalScale: {x: 1.7585351, y: 7.344972, z: 1.758537}
   m_Children:
   - {fileID: 181603113}
+  - {fileID: 1320541114}
   m_Father: {fileID: 1493583644}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5583,6 +5618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0d4cccc12efec40b47dd351c2451a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutlineObject: {fileID: 1320541113}
   happinessPoints: 1
   cleaningType: 1
   onSelectClip: {fileID: 8300000, guid: ab94ad8b4428c9644b9ae3cdab38935b, type: 3}
@@ -5796,6 +5832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0d4cccc12efec40b47dd351c2451a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutlineObject: {fileID: 0}
   happinessPoints: 1
   cleaningType: 0
   onSelectClip: {fileID: 8300000, guid: ab94ad8b4428c9644b9ae3cdab38935b, type: 3}
@@ -6895,6 +6932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0d4cccc12efec40b47dd351c2451a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutlineObject: {fileID: 0}
   happinessPoints: 1
   cleaningType: 1
   onSelectClip: {fileID: 8300000, guid: ab94ad8b4428c9644b9ae3cdab38935b, type: 3}
@@ -6932,6 +6970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0d4cccc12efec40b47dd351c2451a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutlineObject: {fileID: 0}
   happinessPoints: 1
   cleaningType: 1
   onSelectClip: {fileID: 8300000, guid: ab94ad8b4428c9644b9ae3cdab38935b, type: 3}
@@ -7767,6 +7806,88 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306321480}
   m_Mesh: {fileID: -8288205951933391741, guid: 1d784c8f617acc144bcbd2f54782783e, type: 3}
+--- !u!1 &1320541113
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1320541114}
+  - component: {fileID: 1320541121}
+  - component: {fileID: 1320541120}
+  m_Layer: 0
+  m_Name: cola_OUTLINE
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1320541114
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320541113}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.00030711724, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 85501370}
+  m_Father: {fileID: 859505430}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &1320541120
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320541113}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 71b3b95f10768e64498c58277f05bc2d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1320541121
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320541113}
+  m_Mesh: {fileID: -5076798556035486163, guid: 62f7d2b6abfcaf54a82db523cc6f4715, type: 3}
 --- !u!1 &1327378433
 GameObject:
   m_ObjectHideFlags: 0
@@ -8563,6 +8684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0d4cccc12efec40b47dd351c2451a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutlineObject: {fileID: 0}
   happinessPoints: 1
   cleaningType: 1
   onSelectClip: {fileID: 8300000, guid: ab94ad8b4428c9644b9ae3cdab38935b, type: 3}
@@ -8827,6 +8949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0d4cccc12efec40b47dd351c2451a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutlineObject: {fileID: 0}
   happinessPoints: 1
   cleaningType: 0
   onSelectClip: {fileID: 8300000, guid: ab94ad8b4428c9644b9ae3cdab38935b, type: 3}
@@ -9942,6 +10065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0d4cccc12efec40b47dd351c2451a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutlineObject: {fileID: 0}
   happinessPoints: 1
   cleaningType: 1
   onSelectClip: {fileID: 8300000, guid: ab94ad8b4428c9644b9ae3cdab38935b, type: 3}
@@ -10331,6 +10455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0d4cccc12efec40b47dd351c2451a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutlineObject: {fileID: 0}
   happinessPoints: 1
   cleaningType: 1
   onSelectClip: {fileID: 8300000, guid: ab94ad8b4428c9644b9ae3cdab38935b, type: 3}
@@ -10611,6 +10736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0d4cccc12efec40b47dd351c2451a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutlineObject: {fileID: 0}
   happinessPoints: 1
   cleaningType: 1
   onSelectClip: {fileID: 8300000, guid: ab94ad8b4428c9644b9ae3cdab38935b, type: 3}
@@ -12278,6 +12404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0d4cccc12efec40b47dd351c2451a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutlineObject: {fileID: 0}
   happinessPoints: 1
   cleaningType: 1
   onSelectClip: {fileID: 8300000, guid: ab94ad8b4428c9644b9ae3cdab38935b, type: 3}
@@ -17025,6 +17152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0d4cccc12efec40b47dd351c2451a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutlineObject: {fileID: 0}
   happinessPoints: 1
   cleaningType: 1
   onSelectClip: {fileID: 8300000, guid: ab94ad8b4428c9644b9ae3cdab38935b, type: 3}
@@ -20581,6 +20709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0d4cccc12efec40b47dd351c2451a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutlineObject: {fileID: 0}
   happinessPoints: 1
   cleaningType: 1
   onSelectClip: {fileID: 8300000, guid: ab94ad8b4428c9644b9ae3cdab38935b, type: 3}
@@ -21908,6 +22037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0d4cccc12efec40b47dd351c2451a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutlineObject: {fileID: 0}
   happinessPoints: 1
   cleaningType: 1
   onSelectClip: {fileID: 8300000, guid: ab94ad8b4428c9644b9ae3cdab38935b, type: 3}
@@ -22136,6 +22266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0d4cccc12efec40b47dd351c2451a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutlineObject: {fileID: 0}
   happinessPoints: 1
   cleaningType: 1
   onSelectClip: {fileID: 8300000, guid: ab94ad8b4428c9644b9ae3cdab38935b, type: 3}
@@ -22486,6 +22617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0d4cccc12efec40b47dd351c2451a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutlineObject: {fileID: 0}
   happinessPoints: 1
   cleaningType: 1
   onSelectClip: {fileID: 8300000, guid: ab94ad8b4428c9644b9ae3cdab38935b, type: 3}
@@ -23700,6 +23832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0d4cccc12efec40b47dd351c2451a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutlineObject: {fileID: 0}
   happinessPoints: 1
   cleaningType: 1
   onSelectClip: {fileID: 8300000, guid: ab94ad8b4428c9644b9ae3cdab38935b, type: 3}
@@ -24413,6 +24546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0d4cccc12efec40b47dd351c2451a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutlineObject: {fileID: 0}
   happinessPoints: 1
   cleaningType: 1
   onSelectClip: {fileID: 8300000, guid: c557a1bdbe5a70548a9893e68b2bc95d, type: 3}
@@ -25376,6 +25510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0d4cccc12efec40b47dd351c2451a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutlineObject: {fileID: 0}
   happinessPoints: 1
   cleaningType: 1
   onSelectClip: {fileID: 8300000, guid: ab94ad8b4428c9644b9ae3cdab38935b, type: 3}
@@ -26197,6 +26332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0d4cccc12efec40b47dd351c2451a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutlineObject: {fileID: 0}
   happinessPoints: 1
   cleaningType: 1
   onSelectClip: {fileID: 8300000, guid: ab94ad8b4428c9644b9ae3cdab38935b, type: 3}
@@ -26891,6 +27027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0d4cccc12efec40b47dd351c2451a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutlineObject: {fileID: 0}
   happinessPoints: 1
   cleaningType: 1
   onSelectClip: {fileID: 8300000, guid: ab94ad8b4428c9644b9ae3cdab38935b, type: 3}
@@ -28605,6 +28742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0d4cccc12efec40b47dd351c2451a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutlineObject: {fileID: 0}
   happinessPoints: 1
   cleaningType: 1
   onSelectClip: {fileID: 8300000, guid: ab94ad8b4428c9644b9ae3cdab38935b, type: 3}
@@ -30014,6 +30152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0d4cccc12efec40b47dd351c2451a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutlineObject: {fileID: 0}
   happinessPoints: 1
   cleaningType: 1
   onSelectClip: {fileID: 8300000, guid: ab94ad8b4428c9644b9ae3cdab38935b, type: 3}
@@ -30263,6 +30402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0d4cccc12efec40b47dd351c2451a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutlineObject: {fileID: 0}
   happinessPoints: 1
   cleaningType: 1
   onSelectClip: {fileID: 8300000, guid: ab94ad8b4428c9644b9ae3cdab38935b, type: 3}
@@ -30858,6 +30998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0d4cccc12efec40b47dd351c2451a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OutlineObject: {fileID: 0}
   happinessPoints: 1
   cleaningType: 1
   onSelectClip: {fileID: 8300000, guid: ab94ad8b4428c9644b9ae3cdab38935b, type: 3}

@@ -11,7 +11,9 @@ public enum CleaningType
 
 public class InteractableObjects : MonoBehaviour
 {
-    public GameObject OutlineObject;
+    Renderer rend;
+    // public GameObject OutlineObject;
+    public float _frenel = 0.02f;
 
     public int happinessPoints = 1;
 
@@ -31,38 +33,47 @@ public class InteractableObjects : MonoBehaviour
         GetComponent<XRGrabInteractable>().lastHoverExited.AddListener(OnHoverExit);
         isStayInHideArea = false;
 
-        if(cleaningType == CleaningType.HideAndReturn)
+        rend = GetComponent<Renderer>();
+        //rend.material.shader = Shader.Find("Assets/Shader/NewUnlitShader.shader");
+
+        if (cleaningType == CleaningType.HideAndReturn)
         {
             Debug.Log(gameObject.name);
             GameManager.Instance.InitCleanValue();
         }
-
+        /*
         if (OutlineObject == null)
         {
             Debug.Log("Object missing OutlineObject");
             return;
         }
         OutlineObject.SetActive(false);
+        */
+        rend.material.SetFloat("_frenel", 0.02f);
     }
 
     void OnHoverEnter(HoverEnterEventArgs args)
-    {
+    {/*
         if(OutlineObject == null)
         {
             Debug.Log("Object missing OutlineObject");
             return;
         }
         OutlineObject.SetActive(true);
+        */
+        rend.material.SetFloat("_frenel", 0.25f);
     }
 
     void OnHoverExit(HoverExitEventArgs args)
-    {
+    {/*
         if (OutlineObject == null)
         {
             Debug.Log("Object missing OutlineObject");
             return;
         }
         OutlineObject.SetActive(false);
+        */
+        rend.material.SetFloat("_frenel", 0.02f);
     }
 
     public void OnTriggerStay(Collider other)
@@ -104,13 +115,14 @@ public class InteractableObjects : MonoBehaviour
     }
 
     public void OnSelectEnter(SelectEnterEventArgs interactor)
-    {
+    {/*
         if (OutlineObject != null)
         {
             OutlineObject.SetActive(false);
         }
-
-        if(onSelectClip != null)
+        */
+        rend.material.SetFloat("_frenel", 0.02f);
+        if (onSelectClip != null)
         {
             MusicManager.Instance.PlayClip(onSelectClip);
         }
