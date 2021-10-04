@@ -13,6 +13,7 @@ public class MusicManager : MonoBehaviour
     public AudioClip cleaningStateStartClip;
     public AudioClip cleaningStateClip;
     public AudioClip brake;
+    public AudioClip clean;
 
     void Awake()
     {
@@ -49,6 +50,11 @@ public class MusicManager : MonoBehaviour
     public void PlayBrake()
     {
         sfxAudioSource.PlayOneShot(brake);
+    }    
+    
+    public void PlayClean()
+    {
+        sfxAudioSource.PlayOneShot(clean);
     }
 
     public void PlayClip(AudioClip clip)

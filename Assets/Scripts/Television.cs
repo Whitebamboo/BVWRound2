@@ -12,6 +12,9 @@ public class Television : MonoBehaviour
     public Material onMaterial;
     public Material offMaterial;
 
+    public AudioClip switchOnClip;
+    public AudioClip switchOffClip;
+
     private VideoPlayer videoPlayer;
 
     private void Awake()
@@ -32,11 +35,13 @@ public class Television : MonoBehaviour
         {
             GetComponent<MeshRenderer>().material = onMaterial;
             videoPlayer.Play();
+            MusicManager.Instance.PlayClip(switchOnClip);
         }
         else
         {
             GetComponent<MeshRenderer>().material = offMaterial;
             videoPlayer.Stop();
+            MusicManager.Instance.PlayClip(switchOffClip);
         }
     }
 }

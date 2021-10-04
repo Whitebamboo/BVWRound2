@@ -15,6 +15,8 @@ public class InteractableObjects : MonoBehaviour
 
     public CleaningType cleaningType;
 
+    public AudioClip onSelectClip;
+
     bool isTouched;
 
     bool isStayInHideArea;
@@ -32,6 +34,7 @@ public class InteractableObjects : MonoBehaviour
         {
             isStayInHideArea = true;
 
+            MusicManager.Instance.PlayClean();
             GameManager.Instance.ChangeClean(1);
         }
     }
@@ -65,9 +68,16 @@ public class InteractableObjects : MonoBehaviour
 
     public void OnSelectEnter(SelectEnterEventArgs interactor)
     {
+        if(onSelectClip != null)
+        {
+            MusicManager.Instance.PlayClip(onSelectClip);
+        }
+
         if(cleaningType == CleaningType.Hide && GameManager.Instance.state == GameState.CleaningState)
         {
             GameManager.Instance.ShowHideAreaHint();
         } 
     }
+
+    
 }
