@@ -14,6 +14,7 @@ public class PaintSpray : MonoBehaviour
         {
             MusicManager.Instance.PlayClip(onTriggerClip);
             spray.gameObject.SetActive(true);
+            GameManager.Instance.ChangeMood(1);
         }
     }
 }
