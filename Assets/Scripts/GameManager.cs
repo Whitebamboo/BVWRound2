@@ -127,12 +127,13 @@ public class GameManager : MonoBehaviour
     void ProcessHappinessState()
     {
         MusicManager.Instance.PlayHappinessStateClip();
+
+        UI_MoodBar.Instance.SetActive(true);
     }
 
     void ProcessCleaningState()
     {
-        StartCoroutine(MusicManager.Instance.PlayCleaningStateClip());
-        
+        StartCoroutine(MusicManager.Instance.PlayCleaningStateClip());      
     }
 
     void ProcessEndingState()

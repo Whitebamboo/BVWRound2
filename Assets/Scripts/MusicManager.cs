@@ -44,6 +44,7 @@ public class MusicManager : MonoBehaviour
         BgmAudioSource.volume = 0.25f;
         BgmAudioSource.clip = cleaningStateClip;
         BgmAudioSource.Play();
+        UI_MoodBar.Instance.SetActive(false);
         UI_CleanBar.Instance.SetActive(true);
     }
 

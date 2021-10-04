@@ -26,4 +26,9 @@ public class UI_MoodBar : MonoBehaviour
     {
         bar.value = fillPercent;
     }
+
+    public void SetActive(bool active)
+    {
+        gameObject.SetActive(active);
+    }
 }
