@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class MusicManager : MonoBehaviour
 {
+
     static MusicManager s_Instance;
     public static MusicManager Instance => s_Instance;
 
@@ -15,6 +17,8 @@ public class MusicManager : MonoBehaviour
     public AudioClip brake;
     public AudioClip clean;
 
+    public float bufferTime;
+
     void Awake()
     {
         if (s_Instance != null)
@@ -25,7 +29,6 @@ public class MusicManager : MonoBehaviour
 
         s_Instance = this;
     }
-
 
     public void PlayHappinessStateClip()
     {

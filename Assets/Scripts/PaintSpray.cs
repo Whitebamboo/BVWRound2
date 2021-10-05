@@ -8,13 +8,20 @@ public class PaintSpray : MonoBehaviour
 
     public AudioClip onTriggerClip;
 
+    bool isTouched;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             MusicManager.Instance.PlayClip(onTriggerClip);
             spray.gameObject.SetActive(true);
-            GameManager.Instance.ChangeMood(1);
+
+            if(!isTouched)
+            {
+                GameManager.Instance.ChangeMood(1);
+                isTouched = true;
+            }
         }
     }
 }

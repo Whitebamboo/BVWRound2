@@ -11,19 +11,20 @@ public enum CleaningType
 
 public class InteractableObjects : MonoBehaviour
 {
-    Renderer rend;
-    // public GameObject OutlineObject;
-    public float _frenel = 0.02f;
-
     public int happinessPoints = 1;
 
     public CleaningType cleaningType;
 
     public AudioClip onSelectClip;
 
+    public HideArea[] areas;
+
     bool isTouched;
 
     bool isStayInHideArea;
+
+    bool isHover;
+    bool isSelected;
 
     private void Start()
     {
@@ -33,63 +34,40 @@ public class InteractableObjects : MonoBehaviour
         GetComponent<XRGrabInteractable>().lastHoverExited.AddListener(OnHoverExit);
         isStayInHideArea = false;
 
-        rend = GetComponent<Renderer>();
-        //rend.material.shader = Shader.Find("Assets/Shader/NewUnlitShader.shader");
-
         if (cleaningType == CleaningType.HideAndReturn)
         {
-            Debug.Log(gameObject.name);
             GameManager.Instance.InitCleanValue();
         }
-        /*
-        if (OutlineObject == null)
-        {
-            Debug.Log("Object missing OutlineObject");
-            return;
-        }
-        OutlineObject.SetActive(false);
-        */
-        rend.material.SetFloat("_frenel", 0.02f);
     }
 
     void OnHoverEnter(HoverEnterEventArgs args)
-    {/*
-        if(OutlineObject == null)
-        {
-            Debug.Log("Object missing OutlineObject");
-            return;
-        }
-        OutlineObject.SetActive(true);
-        */
-        rend.material.SetFloat("_frenel", 0.25f);
+    {
+        isHover = true;
     }
 
     void OnHoverExit(HoverExitEventArgs args)
-    {/*
-        if (OutlineObject == null)
-        {
-            Debug.Log("Object missing OutlineObject");
-            return;
-        }
-        OutlineObject.SetActive(false);
-        */
-        rend.material.SetFloat("_frenel", 0.02f);
+    {
+        isHover = false;
     }
 
     public void OnTriggerStay(Collider other)
-    {  
-        if(isTouched && other.GetComponent<HideArea>() != null && !isStayInHideArea && GameManager.Instance.state == GameState.CleaningState)
+    {
+        if (other.GetComponent<HideArea>() != null && CheckArea(other.gameObject) && !isStayInHideArea && cleaningType == CleaningType.HideAndReturn && !isSelected)
         {
             isStayInHideArea = true;
 
-            MusicManager.Instance.PlayClean();
             GameManager.Instance.ChangeClean(1);
+
+            if (GameManager.Instance.state == GameState.CleaningState && !isSelected)
+            {
+                MusicManager.Instance.PlayClean();
+            }
         }
     }
 
     public void OnTriggerExit(Collider other)
     {
-        if (isTouched && other.GetComponent<HideArea>() != null && isStayInHideArea && GameManager.Instance.state == GameState.CleaningState)
+        if (other.GetComponent<HideArea>() != null && CheckArea(other.gameObject) && isStayInHideArea && cleaningType == CleaningType.HideAndReturn)
         {
             isStayInHideArea = false;
 
@@ -97,8 +75,27 @@ public class InteractableObjects : MonoBehaviour
         }
     }
 
+    bool CheckArea(GameObject obj)
+    {
+        if(areas == null && areas.Length == 0)
+        {
+            return false;
+        }
+
+        foreach (HideArea area in areas)
+        {
+            if (area.gameObject == obj)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public void OnSelectExit(SelectExitEventArgs interactor)
     {
+        isSelected = false;
         if (cleaningType == CleaningType.HideAndReturn && GameManager.Instance.state == GameState.CleaningState)
         {
             GameManager.Instance.DisableHideAreaHint();
@@ -115,23 +112,19 @@ public class InteractableObjects : MonoBehaviour
     }
 
     public void OnSelectEnter(SelectEnterEventArgs interactor)
-    {/*
-        if (OutlineObject != null)
-        {
-            OutlineObject.SetActive(false);
-        }
-        */
-        rend.material.SetFloat("_frenel", 0.02f);
+    {
+        isSelected = true;
+
         if (onSelectClip != null)
         {
             MusicManager.Instance.PlayClip(onSelectClip);
         }
 
-        if(cleaningType == CleaningType.HideAndReturn && GameManager.Instance.state == GameState.CleaningState)
+        if (cleaningType == CleaningType.HideAndReturn && GameManager.Instance.state == GameState.CleaningState)
         {
             GameManager.Instance.ShowHideAreaHint();
-        } 
+        }
     }
 
-    
+
 }
