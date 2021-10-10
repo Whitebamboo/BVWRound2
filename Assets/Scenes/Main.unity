@@ -11013,6 +11013,7 @@ MonoBehaviour:
   cleaningStateClip: {fileID: 8300000, guid: 9b898b8d44ca0fd418f594adad4b257d, type: 3}
   brake: {fileID: 8300000, guid: 128291ae8cd239e498b3aa23fc586d2f, type: 3}
   clean: {fileID: 8300000, guid: 6ef2a18cce7412a4ea9aadd27b05f37a, type: 3}
+  bufferTime: 0.5
 --- !u!82 &1740876474
 AudioSource:
   m_ObjectHideFlags: 0

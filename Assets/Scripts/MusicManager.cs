@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
+    public class AudioBuffer
+    {
+        public string name;
+        public float time;
+    }
 
     static MusicManager s_Instance;
     public static MusicManager Instance => s_Instance;
@@ -18,6 +23,8 @@ public class MusicManager : MonoBehaviour
     public AudioClip clean;
 
     public float bufferTime;
+    public List<AudioBuffer> audioBuffers = new List<AudioBuffer>();
+
 
     void Awake()
     {
@@ -28,6 +35,17 @@ public class MusicManager : MonoBehaviour
         }
 
         s_Instance = this;
+    }
+
+    private void Update()
+    {
+        if(audioBuffers.Capacity > 0)
+        {
+            foreach (AudioBuffer b in audioBuffers)
+            {
+                b.time -= Time.deltaTime;
+            }
+        }
     }
 
     public void PlayHappinessStateClip()
@@ -63,6 +81,26 @@ public class MusicManager : MonoBehaviour
 
     public void PlayClip(AudioClip clip)
     {
+        if(audioBuffers.Capacity > 0)
+        {
+            foreach(AudioBuffer b in audioBuffers)
+            {
+                if(clip.name == b.name && b.time > 0)
+                {
+                    return;
+                }
+                else if(clip.name == b.name)
+                {
+                    b.time = bufferTime;
+                }
+            }
+        }
+
         sfxAudioSource.PlayOneShot(clip);
+
+        AudioBuffer buffer = new AudioBuffer();
+        buffer.name = clip.name;
+        buffer.time = bufferTime;
+        audioBuffers.Add(buffer);
     }
 }
