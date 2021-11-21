@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject Player;
 
+    public GameObject Tutorial;
+    public float tutorialTime=5.0f;
+
     public float happinessStateTotalTime;
     public float happinessStateTime;
     public float cleaningStateTime;
@@ -94,6 +97,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         currentMoodValue = 0;
+        Tutorial.SetActive(true);
+
         UI_MoodBar.Instance.SetValue(currentMoodValue / (float)MoodValue_max);
 
         UI_CleanBar.Instance.SetActive(false);
@@ -107,6 +112,10 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         m_currentStateTime -= Time.deltaTime;
+        if(Time.time > tutorialTime)
+        {
+            Tutorial.SetActive(false);
+        }
 
         //happiness stage with reached Goal
         if(currentMoodValue == HappinessValueForNextStage && state == GameState.BeginningState)
