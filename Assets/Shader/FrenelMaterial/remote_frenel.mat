@@ -24,11 +24,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _ShinePower: 0.4
-    - _ShineScale: 0.73
-    - _frenel: 0.308
-    - _frenelpower: 7.23
+    - _ShinePower: 0.526
+    - _ShineScale: 1
+    - _frenel: 0.271
+    - _frenelpower: 4.89
     m_Colors:
-    - _Color: {r: 0.4273348, g: 0.4059175, b: 0.5283019, a: 1}
-    - _ShineColor: {r: 1, g: 0.7748243, b: 0.39215684, a: 1}
+    - _Color: {r: 0.22352943, g: 0.121568635, b: 0.1254902, a: 1}
+    - _ShineColor: {r: 0.7803922, g: 0.043137256, b: 0.10588236, a: 1}
   m_BuildTextureStacks: []

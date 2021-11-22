@@ -63,7 +63,11 @@ public class InteractableObjects : MonoBehaviour
                 MusicManager.Instance.PlayClean();
             }
         }
+        ChangeFrenelShader(other);
+       
     }
+
+    
 
     public void OnTriggerExit(Collider other)
     {
@@ -73,7 +77,27 @@ public class InteractableObjects : MonoBehaviour
 
             GameManager.Instance.ChangeClean(-1);
         }
+        ChangeNormalShader(other);
     }
+
+
+    public void ChangeFrenelShader(Collider other)
+    {
+        other.GetComponent<MeshRenderer>().material.SetFloat("_ShineScale", 1f);
+        other.GetComponent<MeshRenderer>().material.SetFloat("_ShinePower", 0.2f);
+        other.GetComponent<MeshRenderer>().material.SetFloat("_frenel", 0.5f);
+        other.GetComponent<MeshRenderer>().material.SetFloat("_frenelpower", 5f);
+
+    }
+    public void ChangeNormalShader(Collider other)
+    {
+        other.GetComponent<MeshRenderer>().material.SetFloat("_ShineScale", 0f);
+        other.GetComponent<MeshRenderer>().material.SetFloat("_ShinePower", 0f);
+        other.GetComponent<MeshRenderer>().material.SetFloat("_frenel", 0f);
+        other.GetComponent<MeshRenderer>().material.SetFloat("_frenelpower", 0f);
+
+    }
+
 
     bool CheckArea(GameObject obj)
     {

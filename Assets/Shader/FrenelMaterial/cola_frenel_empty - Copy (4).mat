@@ -29,6 +29,6 @@ Material:
     - _frenel: 0.308
     - _frenelpower: 7.23
     m_Colors:
-    - _Color: {r: 0.4273348, g: 0.4059175, b: 0.5283019, a: 1}
+    - _Color: {r: 0.078431375, g: 0.5254902, b: 0.21176472, a: 1}
     - _ShineColor: {r: 1, g: 0.7748243, b: 0.39215684, a: 1}
   m_BuildTextureStacks: []
